@@ -6,8 +6,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Code,
+  HeartHandshake,
   Palette,
-  Terminal,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -54,7 +54,7 @@ export default function Home() {
   const skills = useMemo(
     () => [
       { icon: <Code className="h-6 w-6" />, name: "Frontend Development" },
-      { icon: <Terminal className="h-6 w-6" />, name: "Backend Development" },
+      { icon: <HeartHandshake className="h-6 w-6" />, name: "Soft Skills" },
       { icon: <Palette className="h-6 w-6" />, name: "UI/UX Design" },
     ],
     []
