@@ -18,36 +18,36 @@ import { ModeToggle } from "@/components/ui/dark-mode";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Primera Web",
-    href: "/docs/primitives/alert-dialog",
+    href: "/",
     description:
       "En esta primera web use lenguajes como css - html - unicamente ya que fue mi primera web",
   },
   {
     title: "Calculadora",
-    href: "/docs/primitives/hover-card",
+    href: "/",
     description:
       "For sighted users to preview content available behind a link.",
   },
   {
     title: "Lista De Tareas",
-    href: "/docs/primitives/progress",
+    href: "/",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Clon de imstagram",
-    href: "/docs/primitives/scroll-area",
+    href: "/",
     description: "Visually or semantically separates content.",
   },
   {
     title: "Jewel",
-    href: "/docs/primitives/tabs",
+    href: "/",
     description:
       "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
   {
     title: "Web Systems",
-    href: "/docs/primitives/tooltip",
+    href: "/",
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
