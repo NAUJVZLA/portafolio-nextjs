@@ -1,63 +1,169 @@
-import { CalendarDaysIcon, HandRaisedIcon } from "@heroicons/react/24/outline";
+"use client";
 
-export default function Footer() {
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Twitter, ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+export default function InteractiveFooter() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  const calculateTransform = (index: number) => {
+    if (!isMounted) return "none";
+    const maxMove = 100; // reduced maximum movement for subtlety
+    const speed = 0.03; // reduced speed for smoother movement
+    const x =
+      (mousePosition.x / window.innerWidth - 0.5) *
+      maxMove *
+      speed *
+      (index + 1);
+    const y =
+      (mousePosition.y / window.innerHeight - 0.5) *
+      maxMove *
+      speed *
+      (index + 1);
+    return `translate(${x}px, ${y}px)`;
+  };
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-4 sm:py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-          <div className="max-w-xl lg:max-w-lg">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              JUAN CARLOS CARIDAD GONZALEZ
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-300">
-              Si quieres Hablarme tambien puedes hacerlo enviando tu email
+    <footer className="bg-white text-gray-800 py-16 overflow-hidden border-t border-gray-200 ">
+      <div className="container mx-auto px-4 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div
+            className="text-center md:text-left"
+            style={{ transform: calculateTransform(1) }}
+          >
+            <h3 className="text-xl font-bold mb-2 text-gray-900">
+              &lt; Juan Carlos Caridad Gonzalez/&gt;
+            </h3>
+            <p className="flex text-sm justify-center text-gray-600">
+              Desarrollador Web
             </p>
-            <div className="mt-6 flex max-w-md gap-x-4">
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
+          </div>
+
+          <div
+            className="text-center md:text-left "
+            style={{ transform: calculateTransform(2) }}
+          >
+            <h4 className="text-lg font-semibold mb-4 text-gray-900">
+              Enlaces Rápidos
+            </h4>
+            <nav className="space-y-2 transition-transform duration-300 hover:scale-105 ">
+              <Link
+                href="/"
+                className="block text-gray-600 hover:text-gray-900  "
+              >
+                Inicio
+              </Link>
+              <Link
+                href="/projects"
+                className="block text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Proyectos
+              </Link>
+              <Link
+                href="/about"
+                className="block text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Sobre Mí
+              </Link>
+              <Link
+                href="/contacts"
+                className="block text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Contacto
+              </Link>
+            </nav>
+          </div>
+
+          <div
+            className="text-center md:text-left transition-transform duration-300 hover:scale-105"
+            style={{ transform: calculateTransform(3) }}
+          >
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 transition-transform duration-300 hover:scale-105">
+              Conecta Conmigo
+            </h4>
+            <div className="flex justify-center md:justify-start space-x-4 ">
+              <a
+                href="https://github.com/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                <Github className="h-6 w-6" />
+              </a>
+              <a
+                href="https://linkedin.com/in/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <a
+                href="https://twitter.com/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                <Twitter className="h-6 w-6" />
+              </a>
+              <a
+                href="mailto:tu@email.com"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                <Mail className="h-6 w-6" />
+              </a>
             </div>
           </div>
-          <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-            <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                <CalendarDaysIcon
-                  aria-hidden="true"
-                  className="h-6 w-6 text-white"
-                />
-              </div>
-              <dt className="mt-4 font-semibold text-white">Weekly articles</dt>
-              <dd className="mt-2 leading-7 text-gray-400">
-                24/7 estudiando codigo para ser cada dia mejor
-              </dd>
-            </div>
-            <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                <HandRaisedIcon
-                  aria-hidden="true"
-                  className="h-6 w-6 text-white"
-                />
-              </div>
-              <dt className="mt-4 font-semibold text-white">No spam</dt>
-              <dd className="mt-2 leading-7 text-gray-400">
-                No Paro de Aprender
-              </dd>
-            </div>
-          </dl>
+
+          <div
+            className="text-center md:text-left  "
+            style={{ transform: calculateTransform(4) }}
+          >
+            <h4 className="text-lg font-semibold mb-4 text-gray-900">
+              ¿Listo para iniciar un proyecto?
+            </h4>
+            <p className="mb-6 text-gray-600">
+              Trabajemos juntos para dar vida a tus ideas!
+            </p>
+            <Button asChild variant="outline" className="group">
+              <Link href="/contacts" className="flex items-center">
+                Contáctame
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        <div
+          className="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-500"
+          style={{ transform: calculateTransform(5) }}
+        >
+          <p>
+            &copy; {new Date().getFullYear()} &lt;JCCG/&gt; . Todos los derechos
+            reservados.
+          </p>
         </div>
       </div>
-      <div
-        aria-hidden="true"
-        className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-          className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-        />
-      </div>
-    </div>
+    </footer>
   );
 }
