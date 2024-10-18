@@ -45,9 +45,9 @@ export default function Sobremi() {
               Hola soy Juan Carlos Caridad Gonzalez
             </h2>
             <p className="text-lg mb-4">
-              Iam a passionate web developer with over 10 months of experience in
-              creating beautiful and functional websites. My expertise includes
-              frontend and  development, with a focus on modern
+              Iam a passionate web developer with over 10 months of experience
+              in creating beautiful and functional websites. My expertise
+              includes frontend and development, with a focus on modern
               JavaScript frameworks and responsive design.
             </p>
             <p className="text-lg">
@@ -58,8 +58,8 @@ export default function Sobremi() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
+          <Card className="transition-transform duration-300 hover:scale-105">
             <CardHeader>
               <CardTitle>Experience</CardTitle>
             </CardHeader>
@@ -78,7 +78,7 @@ export default function Sobremi() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="transition-transform duration-300 hover:scale-105">
             <CardHeader>
               <CardTitle>Education</CardTitle>
             </CardHeader>

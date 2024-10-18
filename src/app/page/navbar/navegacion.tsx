@@ -13,6 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Facebook, FolderCode, Instagram, Youtube } from "lucide-react";
+import { ModeToggle } from "@/components/ui/dark-mode";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -118,6 +119,7 @@ export default function NavigationPrincipal() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+          <ModeToggle />
         </NavigationMenuList>
       </NavigationMenu>
     </div>
