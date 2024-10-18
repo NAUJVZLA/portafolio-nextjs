@@ -42,16 +42,16 @@ export default function Sobremi() {
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-2xl font-semibold mb-4">
-              Hello, Iam [Your Name]
+              Hola soy Juan Carlos Caridad Gonzalez
             </h2>
             <p className="text-lg mb-4">
-              Iam a passionate web developer with over 5 years of experience in
+              Iam a passionate web developer with over 10 months of experience in
               creating beautiful and functional websites. My expertise includes
-              frontend and backend development, with a focus on modern
+              frontend and  development, with a focus on modern
               JavaScript frameworks and responsive design.
             </p>
             <p className="text-lg">
-              When I'm not coding, you can find me exploring new technologies,
+              When Iam not coding, you can find me exploring new technologies,
               contributing to open-source projects, or enjoying outdoor
               activities like hiking and photography.
             </p>
