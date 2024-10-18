@@ -103,7 +103,7 @@ export default function InteractiveFooter() {
             </h4>
             <div className="flex justify-center md:justify-start space-x-4 ">
               <a
-                href="https://github.com/tuusuario"
+                href="https://github.com/NAUJVZLA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -111,7 +111,7 @@ export default function InteractiveFooter() {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com/in/tuusuario"
+                href="https://www.linkedin.com/in/juan-carlos-caridad-gonzalez-202b54323/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"

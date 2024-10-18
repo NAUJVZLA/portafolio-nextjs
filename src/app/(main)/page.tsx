@@ -162,7 +162,7 @@ export default function Home() {
                   </CardContent>
                   <CardFooter>
                     <Button asChild>
-                      <Link href={`/projects/${project.id}`}>Ver Proyecto</Link>
+                      <Link href={`/#${project.id}`}>Ver Proyecto</Link>
                     </Button>
                   </CardFooter>
                 </Card>
