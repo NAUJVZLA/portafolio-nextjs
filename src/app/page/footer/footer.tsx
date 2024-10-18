@@ -44,7 +44,7 @@ export default function InteractiveFooter() {
   }
 
   return (
-    <footer className="bg-white text-gray-800 py-16 overflow-hidden border-t border-gray-200 ">
+    <footer className=" text-gray-800 py-16 overflow-hidden border-t border-gray-200 ">
       <div className="container mx-auto px-4 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div
@@ -103,7 +103,7 @@ export default function InteractiveFooter() {
             </h4>
             <div className="flex justify-center md:justify-start space-x-4 ">
               <a
-                href="https://github.com/NAUJVZLA"
+                href="https://github.com/tuusuario"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
