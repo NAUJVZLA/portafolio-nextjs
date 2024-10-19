@@ -51,7 +51,7 @@ export default function Home() {
       id: 3,
       title: "Gateste am tres",
       description: "Tienda de telefonía Móvil",
-      image: "/img/proyecto3.jpg",
+      image: "/img/proyectotres.png?height=200&width=300",
       url: "https://gatesteamtres.vercel.app/"
     },
   ]
@@ -73,10 +73,10 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       <div className="flex-grow">
         {/* Nueva sección de héroe animada */}
-        <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-600 text-white overflow-hidden">
+        <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-600 text-white overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/img/1.jpg?height=1080&width=1920"
+              src="/placeholder.svg?height=1080&width=1920"
               alt="Fondo abstracto"
               layout="fill"
               objectFit="cover"
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
           <div className="relative z-10 text-center">
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-4"
+              className="text-4xl md:text-6xl font-bold mb-4"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -93,7 +93,7 @@ export default function Home() {
               Desarrollador Web
             </motion.h1>
             <motion.div
-              className="text-3xl md:text-5xl font-semibold mb-8"
+              className="text-2xl md:text-4xl font-semibold mb-8"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
