@@ -45,7 +45,7 @@ export default function Home() {
       title: "Proyecto 2",
       description: "Una breve descripción del Proyecto 2",
       image: "/img/3.jpg?height=200&width=300",
-      url: "https://www.alejandroej.dev/"
+      url: "https://www.facebook.com/"
     },
     {
       id: 3,
@@ -73,7 +73,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       <div className="flex-grow">
         {/* Nueva sección de héroe animada */}
-        <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-gray-600 to-black-600 text-white overflow-hidden">
+        <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-r from-gray-600 to-white-600 text-white overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/placeholder.svg?height=1080&width=1920"
@@ -83,7 +83,7 @@ export default function Home() {
               className="opacity-20"
             />
           </div>
-          <div className="relative z-10 text-center">
+          <div className="text-center">
             <motion.h1
               className="text-4xl md:text-6xl font-bold mb-4"
               initial={{ opacity: 0, y: -50 }}
@@ -114,7 +114,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Button asChild size="lg" className="bg-white text-purple-600 hover:bg-purple-100">
+              <Button asChild size="lg" className=" bg-slate-500 transition-transform duration-300 hover:scale-105">
                 <Link href="/contacts">Contáctame</Link>
               </Button>
             </motion.div>
@@ -177,7 +177,7 @@ export default function Home() {
                   viewport={{ once: true }}
                 >
                   <Card className="h-full flex flex-col items-center text-center p-6 transition-transform duration-300 hover:scale-105">
-                    <div className="mb-4 text-purple-600">{skill.icon}</div>
+                    <div className="mb-4">{skill.icon}</div>
                     <h3 className="text-xl font-semibold">{skill.name}</h3>
                   </Card>
                 </motion.div>
