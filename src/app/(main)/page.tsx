@@ -1,15 +1,11 @@
-"use client";
-import { useState, useEffect, useMemo } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Code,
-  HeartHandshake,
-  Palette,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+'use client'
+
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { Code, HeartHandshake, Palette, ExternalLink } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -17,180 +13,179 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/card"
+
+type Project = {
+  id: number
+  title: string
+  description: string
+  image: string
+  url: string
+}
+
+type Skill = {
+  icon: React.ReactNode
+  name: string
+}
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentWord, setCurrentWord] = useState(0)
+  const words = ["Innovador", "Creativo", "Eficiente", "Adaptable"]
 
-  const slides = useMemo(
-    () => ["/img/img4.jpg", "/img/img3.jpg", "/img/MERKASAVVY.jpeg"],
-    []
-  );
+  const projects: Project[] = [
+    {
+      id: 1,
+      title: "Proyecto 1",
+      description: "Una breve descripción del Proyecto 1",
+      image: "/img/1.jpg?height=200&width=300",
+      url: "https://gatesteamtres.vercel.app/"
+    },
+    {
+      id: 2,
+      title: "Proyecto 2",
+      description: "Una breve descripción del Proyecto 2",
+      image: "/img/3.jpg?height=200&width=300",
+      url: "https://www.alejandroej.dev/"
+    },
+    {
+      id: 3,
+      title: "Gateste am tres",
+      description: "Tienda de telefonía Móvil",
+      image: "/img/proyecto3.jpg",
+      url: "https://gatesteamtres.vercel.app/"
+    },
+  ]
 
-  const projects = useMemo(
-    () => [
-      {
-        id: 1,
-        title: "Project 1",
-        description: "A brief description of Project 1",
-        image: "/img/MERKASAVVY.jpeg",
-      },
-      {
-        id: 2,
-        title: "Project 2",
-        description: "A brief description of Project 2",
-        image: "/img/MERKASAVVY.jpeg",
-      },
-      {
-        id: 3,
-        title: "Project 3",
-        description: "A brief description of Project 3",
-        image: "/img/chat_5444434.jpg",
-      },
-    ],
-    []
-  );
-
-  const skills = useMemo(
-    () => [
-      { icon: <Code className="h-6 w-6" />, name: "Frontend Development" },
-      { icon: <HeartHandshake className="h-6 w-6" />, name: "Soft Skills" },
-      { icon: <Palette className="h-6 w-6" />, name: "UI/UX Design" },
-    ],
-    []
-  );
+  const skills: Skill[] = [
+    { icon: <Code className="h-6 w-6" />, name: "Desarrollo Frontend" },
+    { icon: <HeartHandshake className="h-6 w-6" />, name: "Habilidades Blandas" },
+    { icon: <Palette className="h-6 w-6" />, name: "Diseño UI/UX" },
+  ]
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
-  const changeSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <main className="min-h-screen flex flex-col">
       <div className="flex-grow">
-        {/* Carrusel */}
-        <div className="relative w-full h-[calc(100vh-4rem)] overflow-hidden">
-          {slides.map((slide, index) => (
+        {/* Nueva sección de héroe animada */}
+        <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-600 text-white overflow-hidden">
+          <div className="absolute inset-0">
             <Image
-              key={index}
-              src={slide}
-              alt={`Slide ${index + 1}`}
+              src="/img/1.jpg?height=1080&width=1920"
+              alt="Fondo abstracto"
               layout="fill"
               objectFit="cover"
-              className={`transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
+              className="opacity-20"
             />
-          ))}
-          <div className="absolute inset-0 flex items-center justify-between p-4">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() =>
-                changeSlide((currentSlide - 1 + slides.length) % slides.length)
-              }
-              aria-label="Diapositiva anterior"
+          </div>
+          <div className="relative z-10 text-center">
+            <motion.h1
+              className="text-5xl md:text-7xl font-bold mb-4"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => changeSlide((currentSlide + 1) % slides.length)}
-              aria-label="Siguiente diapositiva"
+              Desarrollador Web
+            </motion.h1>
+            <motion.div
+              className="text-3xl md:text-5xl font-semibold mb-8"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
+              <span className="mr-2">Soy</span>
+              <motion.span
+                key={currentWord}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                {words[currentWord]}
+              </motion.span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <Button asChild size="lg" className="bg-white text-purple-600 hover:bg-purple-100">
+                <Link href="/contacts">Contáctame</Link>
+              </Button>
+            </motion.div>
           </div>
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full ${
-                  index === currentSlide ? "bg-white" : "bg-white/50"
-                }`}
-                onClick={() => changeSlide(index)}
-                aria-label={`Ir a la diapositiva ${index + 1}`}
-              />
-            ))}
-          </div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50">
-            <h1 className="text-4xl font-bold mb-4">
-              Bienvenido a mi portafolio
-            </h1>
-            <p className="text-xl mb-8">
-              Mostrando mi mejor trabajo y habilidades
-            </p>
-            <Button asChild>
-              <Link href="/contacts">Contáctame</Link>
-            </Button>
-          </div>
-        </div>
+        </section>
 
         {/* Proyectos Destacados */}
         <section className="py-16 bg-gray-100 ">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Proyectos Destacados
-            </h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Proyectos Destacados</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {projects.map((project) => (
-                <Card
+                <motion.div
                   key={project.id}
-                  className="transition-transform duration-300 hover:scale-105"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
                 >
-                  <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover"
-                    />
-                    <CardDescription className="mt-4">
-                      {project.description}
-                    </CardDescription>
-                  </CardContent>
-                  <CardFooter>
-                    <Button asChild>
-                      <Link href={`/#${project.id}`}>Ver Proyecto</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
+                  <Card className="h-full flex flex-col transition-transform duration-300 hover:scale-105">
+                    <CardHeader>
+                      <CardTitle>{project.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <Image
+                        src={project.image}
+                        alt={`Vista previa de ${project.title}`}
+                        width={300}
+                        height={200}
+                        className="rounded-lg object-cover w-full mb-4"
+                      />
+                      <CardDescription>{project.description}</CardDescription>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link href={project.url} target="_blank" rel="noopener noreferrer">
+                          Ver Proyecto
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Habilidades */}
-        <section className="py-16 ">
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Mis Habilidades
-            </h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Mis Habilidades</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {skills.map((skill, index) => (
-                <Card
+                <motion.div
                   key={index}
-                  className="flex flex-col items-center text-center p-6 transition-transform duration-300 hover:scale-105"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
                 >
-                  <div className="mb-4">{skill.icon}</div>
-                  <h3 className="text-xl font-semibold">{skill.name}</h3>
-                </Card>
+                  <Card className="h-full flex flex-col items-center text-center p-6 transition-transform duration-300 hover:scale-105">
+                    <div className="mb-4 text-purple-600">{skill.icon}</div>
+                    <h3 className="text-xl font-semibold">{skill.name}</h3>
+                  </Card>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
       </div>
     </main>
-  );
+  )
 }
