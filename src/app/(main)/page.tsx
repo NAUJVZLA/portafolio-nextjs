@@ -76,7 +76,7 @@ export default function Home() {
         <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-r from-gray-600 to-white-600 text-white overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/placeholder.svg?height=1080&width=1920"
+              src="/img/mibaner.png"
               alt="Fondo abstracto"
               layout="fill"
               objectFit="cover"
