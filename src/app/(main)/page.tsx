@@ -73,7 +73,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       <div className="flex-grow">
         {/* Nueva sección de héroe animada */}
-        <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-600 text-white overflow-hidden">
+        <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-gray-600 to-black-600 text-white overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/placeholder.svg?height=1080&width=1920"
