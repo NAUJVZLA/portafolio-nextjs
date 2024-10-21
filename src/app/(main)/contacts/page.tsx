@@ -133,7 +133,7 @@ export default function Contact() {
                   ))}
                 </div>
                 <CardFooter>
-                  <Button type="submit">Enviar Mensaje</Button>
+                  <Button className="bg-[#151414] hover:bg-[#726e6e] " type="submit">Enviar Mensaje</Button>
                 </CardFooter>
               </form>
             </CardContent>

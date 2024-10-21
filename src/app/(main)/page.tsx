@@ -83,7 +83,7 @@ export default function Home() {
               className="opacity-20"
             />
           </div>
-          <div className="text-center">
+          <div className="text-center sans-serif">
             <motion.h1
               className="text-4xl md:text-6xl font-bold mb-4"
               initial={{ opacity: 0, y: -50 }}
@@ -114,7 +114,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Button asChild size="lg" className=" bg-slate-500 transition-transform duration-300 hover:scale-105">
+              <Button asChild size="lg" className="bg-[#151414] hover:bg-[#726e6e] transition-transform duration-300 hover:scale-105">
                 <Link href="/contacts">Contáctame</Link>
               </Button>
             </motion.div>
@@ -149,7 +149,7 @@ export default function Home() {
                       <CardDescription>{project.description}</CardDescription>
                     </CardContent>
                     <CardFooter>
-                      <Button asChild variant="outline" className="w-full">
+                      <Button asChild className="bg-[#151414] hover:bg-[#726e6e]  w-full">
                         <Link href={project.url} target="_blank" rel="noopener noreferrer">
                           Ver Proyecto
                           <ExternalLink className="ml-2 h-4 w-4" />

@@ -139,13 +139,13 @@ export default function InteractiveFooter() {
             className="text-center md:text-left  "
             style={{ transform: calculateTransform(4) }}
           >
-            <h4 className="text-lg font-semibold mb-4 text-gray-900">
+            <h4 className="text-lg font-semibold mb-4">
               ¿Listo para iniciar un proyecto?
             </h4>
-            <p className="mb-6 text-gray-600">
+            <p className="mb-6 ">
               Trabajemos juntos para dar vida a tus ideas!
             </p>
-            <Button asChild variant="outline" className="group">
+            <Button asChild className="bg-[#151414] hover:bg-[#726e6e]">
               <Link href="/contacts" className="flex items-center">
                 Contáctame
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

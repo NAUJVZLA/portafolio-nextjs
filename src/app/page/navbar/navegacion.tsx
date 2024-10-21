@@ -55,11 +55,11 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function NavigationPrincipal() {
   return (
-    <div className="flex justify-center relative mt-6 my-5 ml-5 ">
-      <NavigationMenu className=" container mx-auto px-4 transition-transform duration-300 hover:scale-105">
+    <div className="flex justify-center relative mt-6 my-5 ml-5  ">
+      <NavigationMenu className=" container mx-auto px-4 transition-transform duration-300 hover:scale-105 sans-serif">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Menu De Portafolio</NavigationMenuTrigger>
+            <NavigationMenuTrigger >Menu De Portafolio</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3">
