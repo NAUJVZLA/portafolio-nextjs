@@ -51,25 +51,25 @@ export default function Contact() {
   // Información de contacto adicional
   const contactMethods = [
     {
-      icon: <Mail className="mr-2" />,
+      icon: <Mail className="mr-2 hover:text-[#fbcc21] transition-colors" />,
       label: "Email",
       value: "JUANCARIDAD@GMAIL.COM",
       href: "mailto:JU4NC4R1D4D@GMAIL.com",
     },
     {
-      icon: <Phone className="mr-2" />,
+      icon: <Phone className="mr-2 hover:text-[#fbcc21] transition-colors" />,
       label: "Phone",
       value: "(+57) 3147327452",
       href: "tel:+57 3147327452",
     },
     {
-      icon: <Github className="mr-2" />,
+      icon: <Github className="mr-2 hover:text-[#fbcc21] transition-colors" />,
       label: "GitHub",
       value: "github.com/NAUJVZLA",
       href: "https://github.com/NAUJVZLA",
     },
     {
-      icon: <Linkedin className="mr-2" />,
+      icon: <Linkedin className="mr-2 hover:text-[#fbcc21] transition-colors" />,
       label: "LinkedIn",
       value: "linkedin.com/in/JuanCaridad",
       href: "https://www.linkedin.com/in/juan-carlos-caridad-gonzalez-202b54323/",
@@ -95,7 +95,7 @@ export default function Contact() {
         <h1 className="text-4xl font-bold mb-8 text-center">Contáctame</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="transition-transform hover:translate-x-1">
+          <Card className="transition-transform hover:translate-x-1  ">
             <CardHeader>
               <CardTitle>Envíame tu mensaje a través de:</CardTitle>
               <CardDescription>

@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto' Arial, Helvetica, sans-serif;
+
 }
 
 @layer utilities {
@@ -12,8 +13,26 @@ body {
   }
 }
 
+.Navegacion {
+  margin: 0 auto;
+  /* mx-auto */
+  padding-left: 1rem;
+  /* px-4 */
+  padding-right: 1rem;
+  /* px-4 */
+  transition: transform 0.3s;
+  /* transition-transform duration-300 */
+}
+
+.Navegacion:hover {
+  transform: scale(1.05);
+  /* hover:scale-105 */
+}
+
 @layer base {
   :root {
+
+    --body: background-color::end;
     ---background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
@@ -55,7 +74,7 @@ body {
     --muted: 215 27.9% 16.9%;
     --muted-foreground: 217.9 10.6% 64.9%;
     --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
+    /* --accent-foreground: 210 20% 98%; */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;
     --border: 215 27.9% 16.9%;

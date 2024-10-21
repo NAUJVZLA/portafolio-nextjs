@@ -56,7 +56,7 @@ const components: { title: string; href: string; description: string }[] = [
 export default function NavigationPrincipal() {
   return (
     <div className="flex justify-center relative mt-6 my-5 ml-5  ">
-      <NavigationMenu className=" container mx-auto px-4 transition-transform duration-300 hover:scale-105 sans-serif">
+      <NavigationMenu className="Navegacion">
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger >Menu De Portafolio</NavigationMenuTrigger>
@@ -99,7 +99,7 @@ export default function NavigationPrincipal() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Proyectos</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <ul className="bold grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                 {components.map((component) => (
                   <ListItem
                     key={component.title}
