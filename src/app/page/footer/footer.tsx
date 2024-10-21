@@ -103,7 +103,7 @@ export default function InteractiveFooter() {
             </h4>
             <div className="flex justify-center md:justify-start space-x-4  transition-transform duration-300 hover:scale-105 ">
               <a
-                href="https://github.com/tuusuario"
+                href="https://github.com/NAUJVZLA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=""
