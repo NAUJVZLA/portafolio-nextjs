@@ -80,7 +80,7 @@ export default function InteractiveFooter() {
                 Proyectos
               </Link>
               <Link
-                href="/about"
+                href="/sobremi"
                 className="block text-gray-600 hover:text-[#fbcc21] transition-colors"
               >
                 Sobre Mí
